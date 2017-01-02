@@ -1,0 +1,123 @@
+{
+  "name": "Answer",
+  "plural": "Answers",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "scope": {
+    "order": [
+      "grade desc",
+      "created_at desc"
+    ]
+  },
+  "mixins": {
+    "TimeStamp": {
+      "createdAt": "created_at",
+      "updatedAt": "updated_at"
+    },
+    "CreatedBy": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "postgresql": {
+        "dataType": "uuid",
+        "dbDefault": "uuid_generate_v4()"
+      }
+    },
+    "grids": {
+      "type": [
+        [
+          "object"
+        ]
+      ],
+      "required": true
+    },
+    "questionIds": {
+      "type": [
+        "string"
+      ],
+      "required": true
+    },
+    "grade": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "dataType": "DECIMAL"
+      }
+    },
+    "duration": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "answerCheats": {
+      "type": "hasMany",
+      "model": "answerCheat",
+      "foreignKey": "answer_id"
+    },
+    "answerItems": {
+      "type": "hasMany",
+      "model": "answerItem",
+      "foreignKey": "answerItem_id"
+    },
+    "packageSchedule": {
+      "type": "belongsTo",
+      "model": "packageSchedule",
+      "foreignKey": "packageSchedule_id"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "participant",
+      "permission": "ALLOW",
+      "property": "*"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "participant",
+      "permission": "guru",
+      "property": "*"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "participant",
+      "permission": "ALLOW",
+      "property": "__create__jawabanSoals"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "owner",
+      "permission": "ALLOW",
+      "property": "*"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "participant",
+      "permission": "ALLOW",
+      "property": "create"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "participant",
+      "permission": "ALLOW",
+      "property": "findById"
+    }
+  ],
+  "methods": {}
+}

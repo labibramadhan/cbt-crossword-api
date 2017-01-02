@@ -1,0 +1,11 @@
+{
+  "db": {
+    "host": "localhost",
+    "port": 5432,
+    "database": "cbt_crossword",
+    "password": "cbtpassword",
+    "name": "db",
+    "connector": "loopback-connector-postgresql",
+    "user": "cbtuser"
+  }
+}

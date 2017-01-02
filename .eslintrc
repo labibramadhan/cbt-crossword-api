@@ -1,0 +1,4 @@
+{
+  "extends": "loopback",
+  "parser": "babel-eslint"
+}

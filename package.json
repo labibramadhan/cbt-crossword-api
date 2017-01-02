@@ -1,0 +1,43 @@
+{
+  "name": "cbt-crossword-api",
+  "version": "1.0.0-alpha1",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node .",
+    "lint": "eslint common server --fix",
+    "pretest": "eslint .",
+    "posttest": "nsp check"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "chance": "^1.0.4",
+    "compression": "^1.6.2",
+    "cors": "^2.8.1",
+    "deepmerge": "^1.3.1",
+    "helmet": "^3.1.0",
+    "loopback": "^3.1.1",
+    "loopback-boot": "^2.23.0",
+    "loopback-component-explorer": "^4.0.0",
+    "loopback-connector-postgresql": "^2.7.0",
+    "loopback-context": "^1.0.0",
+    "loopback-datasource-juggler": "^3.1.1",
+    "loopback-ds-timestamp-mixin": "^3.4.0",
+    "serve-favicon": "^2.0.1",
+    "strong-error-handler": "^1.1.1",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.12.2",
+    "eslint-config-loopback": "^6.1.0",
+    "nsp": "^2.6.2",
+    "pre-commit": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/labibramadhan/cbt-crossword-api.git"
+  },
+  "pre-commit": [
+    "lint"
+  ]
+}

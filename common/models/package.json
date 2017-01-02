@@ -1,0 +1,96 @@
+{
+  "name": "Package",
+  "plural": "Packages",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "createdAt": "created_at",
+      "updatedAt": "updated_at"
+    },
+    "CreatedBy": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "postgresql": {
+        "dataType": "uuid",
+        "dbDefault": "uuid_generate_v4()"
+      }
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "sanction": {
+      "type": "number",
+      "default": 0
+    },
+    "sanctionTrigger": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "validations": [],
+  "relations": {
+    "questions": {
+      "type": "hasMany",
+      "model": "question",
+      "foreignKey": "question_id",
+      "through": "packageQuestion",
+      "keyThrough": "question_id"
+    },
+    "schedules": {
+      "type": "hasMany",
+      "model": "packageSchedule",
+      "foreignKey": "package_id"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "guru",
+      "permission": "ALLOW",
+      "property": "*"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "participant",
+      "permission": "ALLOW",
+      "property": "*"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "owner",
+      "permission": "ALLOW",
+      "property": "*"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "guru",
+      "permission": "ALLOW",
+      "property": "create"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "createChangeStream"
+    }
+  ],
+  "methods": {}
+}
