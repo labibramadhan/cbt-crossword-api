@@ -2,8 +2,8 @@
 
 The project is built using [LoopBack](http://loopback.io) v3.
 
-[![Dependency Status](https://david-dm.org/labibramadhan/ubk-tts-server.svg)](https://david-dm.org/labibramadhan/ubk-tts-server)
-[![devDependency Status](https://david-dm.org/labibramadhan/ubk-tts-server/dev-status.svg)](https://david-dm.org/labibramadhan/ubk-tts-server?type=dev)
+[![Dependency Status](https://david-dm.org/labibramadhan/cbt-crossword-api.svg)](https://david-dm.org/labibramadhan/cbt-crossword-api)
+[![devDependency Status](https://david-dm.org/labibramadhan/cbt-crossword-api/dev-status.svg)](https://david-dm.org/labibramadhan/cbt-crossword-api?type=dev)
 
 ## Table of Contents
 1. [Entity Relationship Diagram](#entity-relationship-diagram)
