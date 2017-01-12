@@ -15,9 +15,9 @@ The project is built using [LoopBack](http://loopback.io) v3.
 
 ## Entity Relationship Diagram
 
-**Not all tables and columns shown***
+**Not all tables and columns are shown***
 
-![CBT Crossword - Entity Relationship Diagram](img/ERD.png)
+![CBT Crossword - Entity Relationship Diagram](static/images/ERD.png)
 
 ## Getting Started
 
