@@ -12,7 +12,7 @@ module.exports = Model => {
   }, bootOptions);
 
   Model.belongsTo(User, {
-    as: 'created_by',
+    as: 'person',
     foreignKey: options.column,
   });
 

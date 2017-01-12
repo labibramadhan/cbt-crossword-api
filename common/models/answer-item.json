@@ -45,41 +45,15 @@
   "relations": {
     "answer": {
       "type": "belongsTo",
-      "model": "answer",
+      "model": "Answer",
       "foreignKey": "answer_id"
     },
     "question": {
       "type": "belongsTo",
-      "model": "question",
+      "model": "Question",
       "foreignKey": "question_id"
     }
   },
-  "acls": [
-    {
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "DENY"
-    },
-    {
-      "accessType": "READ",
-      "principalType": "ROLE",
-      "principalId": "participant",
-      "permission": "ALLOW",
-      "property": "*"
-    },
-    {
-      "accessType": "READ",
-      "principalType": "ROLE",
-      "principalId": "guru",
-      "permission": "ALLOW",
-      "property": "*"
-    },
-    {
-      "principalType": "ROLE",
-      "principalId": "participant",
-      "permission": "ALLOW",
-      "property": "create"
-    }
-  ],
+  "acls": false,
   "methods": {}
 }

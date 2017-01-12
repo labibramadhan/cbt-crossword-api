@@ -52,62 +52,15 @@
   "relations": {
     "package": {
       "type": "belongsTo",
-      "model": "package",
+      "model": "Package",
       "foreignKey": "package_id"
+    },
+    "answers": {
+      "type": "hasMany",
+      "model": "Answer",
+      "foreignKey": "packageSchedule_id"
     }
   },
-  "acls": [
-    {
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "DENY"
-    },
-    {
-      "accessType": "READ",
-      "principalType": "ROLE",
-      "principalId": "guru",
-      "permission": "ALLOW",
-      "property": "*"
-    },
-    {
-      "principalType": "ROLE",
-      "principalId": "owner",
-      "permission": "ALLOW",
-      "property": "find"
-    },
-    {
-      "accessType": "READ",
-      "principalType": "ROLE",
-      "principalId": "participant",
-      "permission": "ALLOW",
-      "property": "*"
-    },
-    {
-      "accessType": "WRITE",
-      "principalType": "ROLE",
-      "principalId": "owner",
-      "permission": "ALLOW",
-      "property": "*"
-    },
-    {
-      "principalType": "ROLE",
-      "principalId": "guru",
-      "permission": "ALLOW",
-      "property": "create"
-    },
-    {
-      "principalType": "ROLE",
-      "principalId": "$unauthenticated",
-      "permission": "ALLOW",
-      "property": "find"
-    },
-    {
-      "accessType": "*",
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "ALLOW",
-      "property": "createChangeStream"
-    }
-  ],
+  "acls": false,
   "methods": {}
 }

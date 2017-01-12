@@ -29,7 +29,10 @@
     },
     "sanction": {
       "type": "number",
-      "default": 0
+      "default": 0,
+      "postgresql": {
+        "dataType": "DECIMAL"
+      }
     },
     "sanctionTrigger": {
       "type": "number",
@@ -40,57 +43,17 @@
   "relations": {
     "questions": {
       "type": "hasMany",
-      "model": "question",
-      "foreignKey": "question_id",
-      "through": "packageQuestion",
+      "model": "Question",
+      "foreignKey": "package_id",
+      "through": "PackageQuestion",
       "keyThrough": "question_id"
     },
     "schedules": {
       "type": "hasMany",
-      "model": "packageSchedule",
+      "model": "PackageSchedule",
       "foreignKey": "package_id"
     }
   },
-  "acls": [
-    {
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "DENY"
-    },
-    {
-      "accessType": "READ",
-      "principalType": "ROLE",
-      "principalId": "guru",
-      "permission": "ALLOW",
-      "property": "*"
-    },
-    {
-      "accessType": "READ",
-      "principalType": "ROLE",
-      "principalId": "participant",
-      "permission": "ALLOW",
-      "property": "*"
-    },
-    {
-      "accessType": "WRITE",
-      "principalType": "ROLE",
-      "principalId": "owner",
-      "permission": "ALLOW",
-      "property": "*"
-    },
-    {
-      "principalType": "ROLE",
-      "principalId": "guru",
-      "permission": "ALLOW",
-      "property": "create"
-    },
-    {
-      "accessType": "*",
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "ALLOW",
-      "property": "createChangeStream"
-    }
-  ],
+  "acls": false,
   "methods": {}
 }

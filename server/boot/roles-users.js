@@ -65,12 +65,13 @@ module.exports = async(app) => {
   }
 
   const user3Exist = await Person.count({
-    email: 'participant@mailinator.com',
+    username: '12345',
   });
   if (!user3Exist) {
     const user3 = await Person.create({
       name: 'Muhammad Labib Ramadhan',
       email: 'participant@mailinator.com',
+      username: '12345',
       password: 'asdqwe123',
     });
     participantRole.principals.create({

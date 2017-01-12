@@ -59,65 +59,20 @@
   "relations": {
     "answerCheats": {
       "type": "hasMany",
-      "model": "answerCheat",
+      "model": "AnswerCheat",
       "foreignKey": "answer_id"
     },
     "answerItems": {
       "type": "hasMany",
-      "model": "answerItem",
+      "model": "AnswerItem",
       "foreignKey": "answerItem_id"
     },
     "packageSchedule": {
       "type": "belongsTo",
-      "model": "packageSchedule",
+      "model": "PackageSchedule",
       "foreignKey": "packageSchedule_id"
     }
   },
-  "acls": [
-    {
-      "principalType": "ROLE",
-      "principalId": "$unauthenticated",
-      "permission": "DENY"
-    },
-    {
-      "accessType": "READ",
-      "principalType": "ROLE",
-      "principalId": "participant",
-      "permission": "ALLOW",
-      "property": "*"
-    },
-    {
-      "accessType": "READ",
-      "principalType": "ROLE",
-      "principalId": "participant",
-      "permission": "guru",
-      "property": "*"
-    },
-    {
-      "principalType": "ROLE",
-      "principalId": "participant",
-      "permission": "ALLOW",
-      "property": "__create__jawabanSoals"
-    },
-    {
-      "accessType": "WRITE",
-      "principalType": "ROLE",
-      "principalId": "owner",
-      "permission": "ALLOW",
-      "property": "*"
-    },
-    {
-      "principalType": "ROLE",
-      "principalId": "participant",
-      "permission": "ALLOW",
-      "property": "create"
-    },
-    {
-      "principalType": "ROLE",
-      "principalId": "participant",
-      "permission": "ALLOW",
-      "property": "findById"
-    }
-  ],
+  "acls": false,
   "methods": {}
 }

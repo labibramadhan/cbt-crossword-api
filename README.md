@@ -17,7 +17,7 @@ The project is built using [LoopBack](http://loopback.io) v3.
 
 **Not all tables and columns shown***
 
-![UBK TTS ERD](img/ERD.png)
+![CBT Crossword - Entity Relationship Diagram](img/ERD.png)
 
 ## Getting Started
 
@@ -25,7 +25,7 @@ The project is built using [LoopBack](http://loopback.io) v3.
 
 1. [NodeJS v6+](https://nodejs.org/en/download/)
 1. [PostgreSQL](https://www.postgresql.org/download/)
-1. [Loopback](http://loopback.io/getting-started/)
+1. [Strongloop Loopback](http://loopback.io/getting-started/)
 
 ### Installation
 

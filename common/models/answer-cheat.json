@@ -36,29 +36,10 @@
   "relations": {
     "answer": {
       "type": "belongsTo",
-      "model": "answer",
+      "model": "Answer",
       "foreignKey": "answer_id"
     }
   },
-  "acls": [
-    {
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "DENY"
-    },
-    {
-      "accessType": "READ",
-      "principalType": "ROLE",
-      "principalId": "participant",
-      "permission": "ALLOW",
-      "property": "*"
-    },
-    {
-      "principalType": "ROLE",
-      "principalId": "participant",
-      "permission": "ALLOW",
-      "property": "create"
-    }
-  ],
+  "acls": false,
   "methods": {}
 }

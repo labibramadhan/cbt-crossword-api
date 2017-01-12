@@ -116,7 +116,7 @@ module.exports = Person => {
     }
   );
 
-  Person.registerparticipant = async (user) => {
+  Person.registerParticipant = async (user) => {
     const Role = app.models.Role;
     const RoleMapping = app.models.RoleMapping;
     const person = await Person.create(user);
@@ -135,7 +135,7 @@ module.exports = Person => {
     return person;
   };
   Person.remoteMethod(
-    'registerparticipant', {
+    'registerParticipant', {
       accepts: [{
         arg: 'user',
         type: 'person',
