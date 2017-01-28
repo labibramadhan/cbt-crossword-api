@@ -30,7 +30,7 @@
         "dbDefault": "uuid_generate_v4()"
       }
     },
-    "answer": {
+    "answered": {
       "type": "string"
     },
     "remark": {
