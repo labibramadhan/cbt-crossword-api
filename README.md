@@ -1,6 +1,4 @@
-# Computer Based Test - Crossword (REST API Server)
-
-The project is built using [LoopBack](http://loopback.io) v3.
+# Computer Based Test - Crossword - REST API Server
 
 [![Dependency Status](https://david-dm.org/labibramadhan/cbt-crossword-api.svg)](https://david-dm.org/labibramadhan/cbt-crossword-api)
 [![devDependency Status](https://david-dm.org/labibramadhan/cbt-crossword-api/dev-status.svg)](https://david-dm.org/labibramadhan/cbt-crossword-api?type=dev)
@@ -12,6 +10,7 @@ The project is built using [LoopBack](http://loopback.io) v3.
     1. [Installation](#installation)
     1. [Running](#running)
     1. [Debugging](#debugging)
+1. [Credits](#credits)
 
 ## Entity Relationship Diagram
 
@@ -59,3 +58,7 @@ Using any supported IDE:
 ```
 node --harmony --debug-brk=<port> ./server/server.js
 ```
+
+## Credits
+
+1. [LoopBack](http://loopback.io) v3
